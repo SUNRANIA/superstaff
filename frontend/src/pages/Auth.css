@@ -1,0 +1,156 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    font-family: sans-serif;
+  }
+  
+  .auth-container::before{
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background:
+      repeating-radial-gradient(circle at 10% 10%, rgba(200, 200, 255, 0.05), transparent 30px),
+      repeating-linear-gradient(60deg, rgba(255, 214, 179, 0.03), transparent 20px);
+    z-index: 0; /* derrière le contenu */
+    pointer-events: none;
+  }
+  .auth-card {
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    background-color: #F0F3F8;
+
+  }
+  
+  .auth-card h2 {
+    font-family: serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color:#071739;
+  }
+  
+  .auth-card h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color:#071739;
+  }
+  
+  /* Consistent input styling */
+  .auth-card input,
+  .password-field input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.6rem;
+    padding-right: 2.5rem; /* space for eye icon if present */
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #071739;
+    box-sizing: border-box;
+
+  }
+  
+  .auth-card button {
+    width: 100%;
+    padding: 0.6rem;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #071739;
+  }
+  
+  .auth-card button:hover{
+    background-color: #4B6382;
+
+  }
+  .auth-card .toggle-link {
+    color:#251105;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .status-message {
+    color: #b00020;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Password field container for eye icon */
+  .password-field {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Eye icon styling */
+  .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-80%);
+    font-size: 1.2rem;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+  }
+  .auth-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin: 0 auto 1rem auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  .remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    color: #251105;
+    margin-bottom: 1rem;
+    gap: 8px;
+    line-height: 1;
+  }
+  
+  .remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #131313;
+    margin: 0; /* Removes default margin */
+  vertical-align: middle;
+  }
+  
+  
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+  
+  .forgot-password a {
+    color:#251105;
+
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  .forgot-link {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #131313;
+
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+  

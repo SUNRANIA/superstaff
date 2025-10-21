@@ -1,0 +1,75 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* dark overlay for better text visibility */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin:10% 15%;
+}
+
+/* centered text content */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 850px;
+  padding: 0 20px;
+  color:#4B6382;
+}
+
+/* glowing effect for title */
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #071739;
+  letter-spacing: 1.5px;
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 18px rgba(255, 255, 255, 0.5),
+    0 0 35px rgba(255, 255, 255, 0.3);
+}
+
+/* paragraph text with lighter shadow for readability */
+.hero-text p {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color:#ffff;
+  opacity: 0.95;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.3),
+    0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* elegant glowing button */
+.hero-button {
+  padding: 14px 32px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #071739, #4B6382);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #4B6382, #071739);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}

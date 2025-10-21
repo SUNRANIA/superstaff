@@ -1,0 +1,173 @@
+
+.footer-container {
+  position: relative;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px; /* smaller gaps */
+}
+
+/* === COLUMNS === */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 8%;
+}
+
+/* === LOGO === */
+.footer-logo {
+  width: 70px;
+  margin-bottom: 8px;
+  position: absolute;
+  margin-left: 90%;
+}
+
+/* === TITLES === */
+.footer-title,
+.footer-heading,
+.footer-head {
+  color:#071739;
+  font-size: 1rem; /* smaller font */
+  font-weight: 600;
+  margin-bottom: 8px;
+  position: relative;
+}
+.footer-heading{
+  color:#071739;
+  font-size: 1rem; /* smaller font */
+  font-weight: 600;
+  margin-bottom: 8px;
+  position: relative;
+  margin-left: 10%;
+}
+
+.footer-title::after,
+.footer-heading::after,
+.footer-head::after {
+  content: "";
+  width: 35px;
+  height: 2px;
+  background-color: #c5a46d;
+  display: block;
+  margin-top: 3px;
+}
+
+/* === TEXT === */
+.footer-text {
+  color:#071739;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align:left;
+  margin-left: -4%;
+
+}
+
+/* === CONTACT LIST === */
+.contact-list {
+  line-height: 1.4;
+  font-size: 0.85rem;
+  list-style: none;
+  padding: 0;
+  margin-left: 8%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.contact-list li {
+  color: #071739;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: #071739;
+  transition: color 0.3s;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.contact-list a:hover {
+  color: #b9915f;
+}
+
+.icon {
+  color: #b9915f;
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+/* === SOCIAL ICONS === */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-left:12%;
+  margin-top: 4%;
+}
+
+.social-icons a {
+  color: #071739;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #b9915f;
+  transform: scale(1.1);
+}
+
+/* === BOTTOM TEXT === */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #d1c5b2;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-column {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .footer-logo {
+    margin: 0 auto 10px;
+    position: relative;
+  }
+
+  .contact-list li {
+    justify-content: center;
+  }
+}
+
+.footer::before{
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background:
+    repeating-radial-gradient(circle at 10% 10%, rgba(200, 200, 255, 0.05), transparent 30px),
+    repeating-linear-gradient(60deg, rgba(255, 214, 179, 0.03), transparent 20px);
+  z-index: 1; /* derrière le contenu */
+  pointer-events: none;
+}
+.footer{
+  position: relative;
+  
+}

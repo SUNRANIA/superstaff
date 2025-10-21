@@ -1,0 +1,102 @@
+.contact-page {
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.contact-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-radial-gradient(circle at 15% 15%, rgba(200, 200, 255, 0.05), transparent 30px),
+    repeating-linear-gradient(60deg, rgba(255, 214, 179, 0.03), transparent 20px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-card {
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-form-area {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px;
+}
+
+.contact-form-area h1 {
+  font-size: 28px;
+  color:#071739;
+
+  margin-bottom: 10px;
+}
+
+.contact-form-area p {
+  font-size: 16px;
+  color: #251105;
+  margin-bottom: 30px;
+}
+
+.contact-form-area form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #071739;
+}
+
+.contact-form-area input,
+.contact-form-area textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact-form-area button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color:#071739
+
+}
+
+.contact-form-area button:hover {
+  background-color: #4B6382;
+
+}
+
+.status {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}

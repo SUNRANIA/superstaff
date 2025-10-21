@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+.immeuble {
+  position: relative;
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+.immeuble::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background:
+    repeating-radial-gradient(circle at 10% 10%, rgba(200, 200, 255, 0.05), transparent 30px),
+    repeating-linear-gradient(60deg, rgba(255, 214, 179, 0.03), transparent 20px);
+  z-index: 0; /* derrière le contenu */
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; 
+}
+
+/* ===== HEADER ===== */
+.immeuble-header {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  
+}
+
+.immeuble-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #071739;
+  font-family: 'Playfair Display', serif;
+
+  
+}
+
+.immeuble-header p {
+  font-size: 1.1rem;
+  color:#071739;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ===== DETAILS ===== */
+.immeuble-details {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+}
+
+.immeuble-details h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #071739;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.immeuble-details ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.immeuble-details li {
+  background-color: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align:center;
+  color:#071739;
+  font-size:1.1rem;
+}
+
+.immeuble-details li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ===== GALLERY ===== */
+.immeuble-gallery {
+  margin-top: 4rem;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+
+}
+
+
+.immeuble-gallery h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #071739;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.gallry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+  gap: 1rem;
+}
+
+.gallry-card {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+
+.gallry-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* ===== IMAGE ANIMATION ===== */
+.card-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.card-wrapper.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-wrapper.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card-imag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+.gallry-card:hover .card-imag {
+  transform: scale(1.05);
+}
+
+/* ===== DELETE ICON ===== */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px 7px;
+  z-index: 10;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: rgba(255, 0, 0, 0.9);
+  transform: scale(1.1);
+}

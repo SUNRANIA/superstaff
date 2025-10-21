@@ -1,0 +1,58 @@
+.navbar {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between;
+  padding: 8px 30px; /* Slightly smaller padding */
+  background-color:#FFF9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom: 2px solid #4B6382;
+  overflow: hidden; /* pour ne pas que le motif dépasse */
+  position: relative;
+}
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background:
+    repeating-radial-gradient(circle at 10% 10%, rgba(200, 200, 255, 0.05), transparent 30px),
+    repeating-linear-gradient(60deg, rgba(255, 214, 179, 0.03), transparent 20px);
+  z-index: 0; /* derrière le contenu */
+  pointer-events: none;
+}
+
+.aulogo {
+  position: relative;
+  height:70px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 12px;
+  color: #071739;
+  opacity:5;
+  z-index:1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center; /* Ensure links are centered vertically */
+  gap: 20px; /* Space between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 500;
+  color: #071739;
+  transition: color 0.3s ease;
+  padding: 6px 10px;
+}
+
+.nav-links a:hover {
+  color:#DAA520;
+}
+ 
+
+.logout-btn {
+  cursor: pointer;
+  font-weight: 500;
+  background-color: none;
+}

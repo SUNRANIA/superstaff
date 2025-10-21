@@ -1,0 +1,80 @@
+.about-section {
+  padding: 60px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* pour que le ::before soit relatif */
+  overflow: hidden;
+  background: transparent; /* section transparente */
+}
+
+/* Motif décoratif derrière tout le contenu */
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background:
+    repeating-radial-gradient(circle at 15% 15%, rgba(200, 200, 255, 0.05), transparent 30px),
+    repeating-linear-gradient(60deg, rgba(255, 214, 179, 0.03), transparent 20px);
+  z-index: 0; /* derrière le contenu */
+  pointer-events: none;
+}
+
+/* Container central transparent avec un peu d'ombre pour visibilité */
+.about-container {
+position: relative; /* pour être au-dessus du ::before */
+  background-color: rgba(255, 255, 255, 0.1); /* transparent mais légèrement visible */
+  max-width: 800px;
+  padding: 2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* au-dessus du motif */
+  left:18%;
+}
+
+/* Texte */
+.about-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color:#071739;
+
+}
+
+.about-container p {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+  font-size: 1.3rem;
+  color:#071739;
+
+  text-align: center;
+}
+
+/* Images */
+.about-images {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-images img {
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.img-top {
+  width: 40%;
+  margin-top: 10%;
+}
+.img-middle {
+  width: 40%;
+  margin-top: 5%;
+}
+.img-bottom {
+  width: 40%;
+  margin-top: -25%;
+  margin-left: -45%;
+}
