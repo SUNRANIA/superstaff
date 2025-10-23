@@ -1,11 +1,12 @@
-// backend/index.js
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const User = require("./models/user"); // lowercase to match user.js
-console.log("User model loaded:", User);
+const path = require("path");
+const imagesRouter = require("./routes/images");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
@@ -14,7 +15,7 @@ app.use(express.json());
 // --- Constants ---
 const ADMIN_EMAIL = "sas.superstaff@gmail.com";
 //--------------------------------//////////
-/*app.post("/api/contact", async (req, res) => {
+app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
   if (!name || !email || !message)
     return res.status(400).json({ error: "All fields are required." });
@@ -26,13 +27,17 @@ const ADMIN_EMAIL = "sas.superstaff@gmail.com";
       subject: `Contact from ${name}`,
       text: message,
     });
-    res.status(200).json({ success: true, message: "Email sent successfully." });
+    res
+      .status(200)
+      .json({ success: true, message: "Email sent successfully." });
   } catch (error) {
     console.error("Email sending failed:", error);
-    res.status(500).json({ error: "Failed to send email.", details: error.message });
+    res
+      .status(500)
+      .json({ error: "Failed to send email.", details: error.message });
   }
 });
-*/
+
 // --- Nodemailer transporter (shared for all routes) ---
 // --- Nodemailer transporter ---
 const transporter = nodemailer.createTransport({
@@ -83,7 +88,9 @@ app.post("/api/contact", async (req, res) => {
       text: emailBody,
     });
 
-    res.status(200).json({ success: true, message: "✅ Email envoyé avec succès" });
+    res
+      .status(200)
+      .json({ success: true, message: "✅ Email envoyé avec succès" });
   } catch (error) {
     console.error("❌ Erreur lors de l'envoi de l'email :", error);
     res.status(500).json({
@@ -92,7 +99,6 @@ app.post("/api/contact", async (req, res) => {
     });
   }
 });
-
 
 // === SIGNUP ===
 app.post("/api/signup", async (req, res) => {
@@ -177,16 +183,11 @@ mongoose
   )
   .then(() => {
     console.log("✅ MongoDB Atlas connected");
-    app.listen(5000, () => console.log("Backend running on http://localhost:5000"));
+    app.listen(5000, () =>
+      console.log("Backend running on http://localhost:5000")
+    );
   })
   .catch((err) => console.error("❌ MongoDB connection error:", err));
-//////////////////////////////////////////
-/////////////////////////////////////////
-require("dotenv").config();
-
-const path = require("path");
-const imagesRouter = require("./routes/images");
-
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -201,12 +202,10 @@ mongoose
     );
   })
   .catch((err) => console.error(err));
-///////////////////////
-const path = require("path");
 
 // Serve React frontend
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
 });
