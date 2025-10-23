@@ -19,5 +19,8 @@
     "multer": "^2.0.2",
     "nodemailer": "^7.0.5"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "20.x"
+  }
 }
